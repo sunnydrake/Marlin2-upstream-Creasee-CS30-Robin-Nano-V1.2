@@ -1885,7 +1885,7 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M S{ 2400, 2400, 600 }
+#define HOMING_FEEDRATE_MM_M { 2400, 2400, 600 }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
