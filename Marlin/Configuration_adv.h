@@ -1537,7 +1537,7 @@
 
   // Allow international symbols in long filenames. To display correctly, the
   // LCD's font must contain the characters. Check your selected LCD language.
-#define UTF_FILENAME_SUPPORT
+//#define UTF_FILENAME_SUPPORT
 
 #define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
 #define LONG_FILENAME_WRITE_SUPPORT   // Create / delete files with long filenames via M28, M30, and Binary Transfer Protocol
@@ -1893,16 +1893,16 @@
     #if ENABLED(TOUCH_UI_UTF8_WESTERN_CHARSET)
       // Additional character groups. These characters require
       // full bitmaps and take up considerable storage:
-      //#define TOUCH_UI_UTF8_SUPERSCRIPTS  // ¹ ² ³
-      //#define TOUCH_UI_UTF8_COPYRIGHT     // © ®
-      //#define TOUCH_UI_UTF8_GERMANIC      // ß
-      //#define TOUCH_UI_UTF8_SCANDINAVIAN  // Æ Ð Ø Þ æ ð ø þ
-      //#define TOUCH_UI_UTF8_PUNCTUATION   // « » ¿ ¡
-      //#define TOUCH_UI_UTF8_CURRENCY      // ¢ £ ¤ ¥
-      //#define TOUCH_UI_UTF8_ORDINALS      // º ª
-      //#define TOUCH_UI_UTF8_MATHEMATICS   // ± × ÷
-      //#define TOUCH_UI_UTF8_FRACTIONS     // ¼ ½ ¾
-      //#define TOUCH_UI_UTF8_SYMBOLS       // µ ¶ ¦ § ¬
+      #define TOUCH_UI_UTF8_SUPERSCRIPTS  // ¹ ² ³
+      #define TOUCH_UI_UTF8_COPYRIGHT     // © ®
+      #define TOUCH_UI_UTF8_GERMANIC      // ß
+      #define TOUCH_UI_UTF8_SCANDINAVIAN  // Æ Ð Ø Þ æ ð ø þ
+      #define TOUCH_UI_UTF8_PUNCTUATION   // « » ¿ ¡
+      #define TOUCH_UI_UTF8_CURRENCY      // ¢ £ ¤ ¥
+      #define TOUCH_UI_UTF8_ORDINALS      // º ª
+      #define TOUCH_UI_UTF8_MATHEMATICS   // ± × ÷
+      #define TOUCH_UI_UTF8_FRACTIONS     // ¼ ½ ¾
+      #define TOUCH_UI_UTF8_SYMBOLS       // µ ¶ ¦ § ¬
     #endif
 
     // Cyrillic character set, costs about 27KiB of flash
