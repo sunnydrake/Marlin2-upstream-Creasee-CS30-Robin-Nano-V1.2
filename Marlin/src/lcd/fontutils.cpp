@@ -33,10 +33,10 @@
 
 #define MAX_UTF8_CHAR_SIZE 4
 
-#if HAS_WIRED_LCD
+//#if HAS_WIRED_LCD
   #include "marlinui.h"
   #include "../MarlinCore.h"
-#endif
+//#endif
 
 #include "fontutils.h"
 

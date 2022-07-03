@@ -24,10 +24,10 @@
 
 #if HAS_GRAPHICAL_TFT
 
-#include "tft_string.h"
+
 #include "../fontutils.h"
 #include "../marlinui.h"
-
+#include "tft_string.h"
 //#define DEBUG_TFT_FONT
 #define DEBUG_OUT ENABLED(DEBUG_TFT_FONT)
 #include "../../core/debug_out.h"
@@ -94,12 +94,15 @@ void TFT_String::set() {
  *   @ displays an axis name such as XYZUVW, or E for an extruder
  */
 void TFT_String::add(const char *tpl, const int8_t index, const char *cstr/*=nullptr*/, FSTR_P const fstr/*=nullptr*/) {
+  lchar_t lch;
   lchar_t ch;
 
+  
+
   while (*tpl) {
-    tpl = get_utf8_value_cb(tpl, read_byte_ram, ch);
-    if (ch > 255) ch |= 0x0080;
-    const uint8_t ch = uint8_t(ch & 0x00FF);
+    tpl = get_utf8_value_cb(tpl, read_byte_ram, lch);
+    if (lch > 255) lch |= 0x0080;
+    const uint8_t ch = uint8_t(lch & 0x00FF);
 
     if (ch == '=' || ch == '~' || ch == '*') {
       if (index >= 0) {
@@ -125,10 +128,12 @@ void TFT_String::add(const char *tpl, const int8_t index, const char *cstr/*=nul
 
 void TFT_String::add(const char *cstr, uint8_t max_len/*=MAX_STRING_LENGTH*/) {
   lchar_t ch;
+  lchar_t lch;
+
   while (*cstr && max_len) {
-    cstr = get_utf8_value_cb(cstr, read_byte_ram, ch);
-    if (ch > 255) ch |= 0x0080;
-    const uint8_t ch = uint8_t(ch & 0x00FF);
+    cstr = get_utf8_value_cb(cstr, read_byte_ram, lch);
+    if (lch > 255) lch |= 0x0080;
+    const uint8_t ch = uint8_t(lch & 0x00FF);
     add_character(ch);
     max_len--;
   }
