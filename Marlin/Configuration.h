@@ -2889,9 +2889,9 @@
 //#define TFT_CLASSIC_UI
 #define TFT_COLOR_UI 1
 //#define TFT_LVGL_UI 1
-#ifndef FIL_RUNOUT_PIN
-  #define FIL_RUNOUT_PIN                    PA4 
-#endif
+// #ifndef FIL_RUNOUT_PIN
+//   #define FIL_RUNOUT_PIN                    PA4 
+// #endif
 // #ifndef HAS_TEMP_BED
 //   #define HAS_TEMP_BED                    1 
 // #endif
